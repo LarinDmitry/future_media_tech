@@ -30,7 +30,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser to see the application.
+Open http://localhost:3000/future_media_tech in your browser to see the application.
 
 ### 3. Running Tests
 The project uses Vitest + React Testing Library for lightning-fast unit and snapshot testing.
