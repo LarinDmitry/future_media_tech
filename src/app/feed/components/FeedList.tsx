@@ -91,7 +91,7 @@ const List: FC<Props> = ({
         <MessageCard
           key={msg.id}
           msg={msg}
-          isCurrentUserAuthor={msg.username === user.username}
+          isCurrentUserAuthor={user.username !== 'guest' && msg.username === user.username}
           isEditing={editingId === msg.id}
           editText={editText}
           setEditText={setEditText}

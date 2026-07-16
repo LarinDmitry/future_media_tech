@@ -1,5 +1,5 @@
 export const VALID_USERS = [
-  {email: 'ada@dispatch.dev', password: '123456', name: 'Ada Lovelace'},
+  {email: 'john@dispatch.dev', password: '123456', name: 'John Smith'},
   {email: 'dima@dispatch.dev', password: '777777', name: 'Dima Test'},
   {email: 'test@dispatch.dev', password: '654321', name: 'Test User'},
 ];

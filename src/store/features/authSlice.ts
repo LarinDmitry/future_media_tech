@@ -8,11 +8,16 @@ interface User {
 }
 
 interface AuthState {
-  user: User | null;
+  user: User;
 }
 
 const initialState: AuthState = {
-  user: null,
+  user: {
+    name: 'Anonymous',
+    username: 'guest',
+    avatar: 'A',
+    email: 'anonymous@dispatch.dev',
+  },
 };
 
 const authSlice = createSlice({
@@ -23,7 +28,12 @@ const authSlice = createSlice({
       state.user = action.payload;
     },
     logout: (state) => {
-      state.user = null;
+      state.user = {
+        name: 'Anonymous',
+        username: 'guest',
+        avatar: 'A',
+        email: 'anonymous@dispatch.dev',
+      };
     },
   },
 });

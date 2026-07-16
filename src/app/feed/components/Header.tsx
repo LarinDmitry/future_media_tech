@@ -33,7 +33,7 @@ const Header: FC<Props> = ({user, onLogout}) => {
           onClick={onLogout}
           className="border-[2px] border-[#111111] px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider hover:bg-black hover:text-white transition-colors cursor-pointer"
         >
-          LOG OUT
+          LOG {user.name === 'Anonymous' ? 'IN' : 'OUT'}
         </button>
       </div>
     </header>

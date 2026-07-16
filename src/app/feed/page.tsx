@@ -33,10 +33,6 @@ const FeedContent = () => {
   const activeDateFrom = searchParams.get('from') || '';
   const activeDateTo = searchParams.get('to') || '';
 
-  useEffect(() => {
-    !currentUser && router.push('/');
-  }, [currentUser, router]);
-
   const updateFilters = (updates: Record<string, string | null>) => {
     const params = new URLSearchParams(searchParams.toString());
     Object.entries(updates).forEach(([key, value]) =>

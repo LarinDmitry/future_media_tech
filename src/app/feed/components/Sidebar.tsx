@@ -44,7 +44,7 @@ const Sidebar: FC<Props> = ({
             <button
               key={tag}
               onClick={() => onUpdateFilters({tag: isActive ? null : tag})}
-              className={`px-3 py-1 text-xs font-mono font-bold uppercase border-[2px] border-[#111111] transition-all cursor-pointer ${
+              className={`px-3 py-1 text-sm font-mono font-bold uppercase border-[2px] border-[#111111] transition-all cursor-pointer ${
                 isActive ? 'bg-[#FFE600] [box-shadow:2px_2px_0px_0px_#111111]' : 'bg-white hover:bg-gray-100'
               }`}
             >
@@ -61,7 +61,7 @@ const Sidebar: FC<Props> = ({
         <select
           value={activeUser}
           onChange={({target: {value}}) => onUpdateFilters({user: value || null})}
-          className="w-full bg-white px-3 py-2 border-[2px] border-[#111111] text-xs font-mono font-bold rounded-none appearance-none focus:outline-none cursor-pointer"
+          className="w-full bg-white px-3 h-[50px] py-2 border-[3px] border-[#111111] font-mono font-bold rounded-none appearance-none focus:outline-none cursor-pointer"
         >
           <option value="">All users</option>
           {allUsersList.map(({username, author}) => (
@@ -80,14 +80,14 @@ const Sidebar: FC<Props> = ({
         label="From"
         value={activeDateFrom}
         onChange={({target: {value}}: ChangeEvent<HTMLInputElement>) => onUpdateFilters({from: value || null})}
-        placeholder="From"
+        placeholder="DD.MM.YYYY"
         type="date"
       />
       <BaseInput
         label="To"
         value={activeDateTo}
         onChange={({target: {value}}: ChangeEvent<HTMLInputElement>) => onUpdateFilters({to: value || null})}
-        placeholder="To"
+        placeholder="DD.MM.YYYY"
         type="date"
       />
     </div>
