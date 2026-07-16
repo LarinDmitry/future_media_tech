@@ -6,8 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "build": "next build",
     "predeploy": "next build && echo > out/.nojekyll",
     "deploy": "gh-pages -d out -t -f",
     "lint": "eslint"
@@ -21,9 +23,13 @@
     "react-redux": "^9.3.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.3",
     "autoprefixer": "^10.5.3",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
@@ -34,8 +40,10 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "happy-dom": "^20.10.6",
     "postcss": "^8.5.19",
     "tailwindcss": "^4.3.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

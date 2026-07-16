@@ -4,7 +4,7 @@ import {SyntheticEvent, useState} from 'react';
 import {useRouter} from 'next/navigation';
 import {useDispatch} from 'react-redux';
 import {login} from '../store/features/authSlice';
-import BaseInput from 'components/BaseComponents/BaseInput';
+import BaseInput from 'components/BaseComponents/BaseInput/BaseInput';
 import {VALID_USERS} from './utils';
 
 const LoginPage = () => {
@@ -27,7 +27,7 @@ const LoginPage = () => {
         login({
           email: foundUser.email,
           name: foundUser.name,
-          username: foundUser.email.split('@')[0],
+          username: `@${foundUser.email.split('@')[0]}`,
           avatar: foundUser.email[0].toUpperCase(),
         })
       );

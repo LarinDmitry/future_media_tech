@@ -1,0 +1,18 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BaseInput Component > should match the snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="block font-mono text-xs font-bold tracking-wider uppercase mb-2"
+  >
+    Username
+  </label>
+  <input
+    class="w-full bg-white px-4 py-3 border-[3px] border-[#111111] rounded-none cursor-pointer text-base font-medium focus:outline-none focus:bg-[#FFE600]/10 transition-colors placeholder-gray-400"
+    placeholder="Enter your username"
+    required=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
