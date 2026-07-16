@@ -90,4 +90,6 @@ src/
    * Integration Tests: Implement Cypress to run end-to-end (E2E) tests simulating real user flows
    * Extended Unit Testing: Expand Vitest coverage across all components, slices, and pages
 2. Server-Side Features
-   * Transition mock static messaging and users states to API Routes
+   * Transition mock static messaging and users states to API Routes (now it works in redux state without a page refresh)
+3. Time tracker
+   * For editing messages can be updated publish time (now just fixed first publish) and ordering message
