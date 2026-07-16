@@ -1,0 +1,17 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "printWidth": 120,
+  "endOfLine": "auto",
+  "jsxBracketSameLine": false,
+  "react/jsx-max-props-per-line": [
+    2,
+    {
+      "when": "always"
+    }
+  ]
+}
