@@ -19,7 +19,7 @@ const BaseInput: FC<Props> = ({label, value, onChange, placeholder, type}) => (
       onChange={onChange}
       placeholder={placeholder}
       required
-      className="w-full px-4 py-3 border-[3px] border-[#111111] rounded-none text-base font-medium focus:outline-none focus:bg-[#FFE600]/10 transition-colors placeholder-gray-400"
+      className="w-full px-4 py-3 border-[3px] border-[#111111] rounded-none cursor-pointer text-base font-medium focus:outline-none focus:bg-[#FFE600]/10 transition-colors placeholder-gray-400"
     />
   </Fragment>
 );

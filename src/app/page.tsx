@@ -2,16 +2,14 @@
 
 import {SyntheticEvent, useState} from 'react';
 import {useRouter} from 'next/navigation';
+import {useDispatch} from 'react-redux';
+import {login} from '../store/features/authSlice';
 import BaseInput from 'components/BaseComponents/BaseInput';
-
-const VALID_USERS = [
-  {email: 'ada@dispatch.dev', password: '123456'},
-  {email: 'dima@dispatch.dev', password: '777777'},
-  {email: 'test@dispatch.dev', password: '654321'},
-];
+import {VALID_USERS} from './utils';
 
 const LoginPage = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
@@ -20,11 +18,23 @@ const LoginPage = () => {
     e.preventDefault();
     setError('');
 
-    const user = VALID_USERS.find(
+    const foundUser = VALID_USERS.find(
       (u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password
     );
 
-    user ? router.push('/feed') : setError('Invalid email or password. Please try again.');
+    if (foundUser) {
+      dispatch(
+        login({
+          email: foundUser.email,
+          name: foundUser.name,
+          username: foundUser.email.split('@')[0],
+          avatar: foundUser.email[0].toUpperCase(),
+        })
+      );
+      router.push('/feed');
+    } else {
+      setError('Invalid email or password. Please try again.');
+    }
   };
 
   return (
@@ -64,25 +74,25 @@ const LoginPage = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <BaseInput
-                  label="Email"
-                  value={email}
-                  onChange={({target: {value}}) => {
-                    setError('');
-                    setEmail(value);
-                  }}
-                  placeholder="ada@dispatch.dev"
-                  type="email"
+                label="Email"
+                value={email}
+                onChange={({target: {value}}) => {
+                  setError('');
+                  setEmail(value);
+                }}
+                placeholder="ada@dispatch.dev"
+                type="email"
               />
 
               <BaseInput
-                  label="Password"
-                  value={password}
-                  onChange={({target: {value}}) => {
-                    setError('');
-                    setPassword(value);
-                  }}
-                  placeholder="••••••••"
-                  type="password"
+                label="Password"
+                value={password}
+                onChange={({target: {value}}) => {
+                  setError('');
+                  setPassword(value);
+                }}
+                placeholder="••••••••"
+                type="password"
               />
 
               <div className="pt-4">
